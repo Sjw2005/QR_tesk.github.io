@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>随机表达式生成器</title>
+</head>
+<body>
+    <h1 id="expression"></h1>
+    <script>
+        function generateRandomExpression() {
+            // 生成随机三位数（只包含1、2、3）
+            function randomNumber() {
+                return Math.floor(Math.random() * 3) + 1 + '' + 
+                       Math.floor(Math.random() * 3) + 1 + '' + 
+                       Math.floor(Math.random() * 3) + 1;
+            }
+            const num1 = randomNumber();
+            const num2 = randomNumber();
+            const expression = `${num1}+${num2}`;
+            document.getElementById('expression').innerText = expression;
+        }
+
+        // 页面加载时生成随机表达式
+        window.onload = generateRandomExpression;
+    </script>
+</body>
+</html>
